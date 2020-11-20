@@ -28,3 +28,7 @@ def completedTodo(request, todo_id):
 def deletecompleted(request):
     Todolist.objects.filter(completed__exact=True).delete()
     return redirect('index')
+
+def deleteAll(request):
+    Todolist.objects.all().delete()
+    return redirect('index')
